@@ -1,17 +1,7 @@
-public class p10_SeoulPeople{
-static void stringReverse(){
-int menSum = 0;
- float menAvg = 0;
- int womenSum = 0;
- float womenAvg = 0;
- int[] addressSum = new int[25];
- float[] addressAvg = new float[25];
- String[] live = {"city1","city2","city3","city4","city5"
- ,"city6","city7","city8","city9","city10"
- ,"city11","city12","city13","city14","city15"
- ,"city16","city17","city18","city19","city20"
- ,"city21","city22","city23","city24","city25"};
- int[][] data={
+class SeoulPeople {
+public static void main(String[] args)
+{
+int[][] data={
     {74425, 76326},
     {61164, 61636},
     {109688, 115744},
@@ -38,30 +28,27 @@ int menSum = 0;
     {319197, 335045},
     {229829, 231671}
 };
-for(int i=0; i<data.length;i++ ){
-menSum += data[i][0];
-womenSum += data[i][1];
-for(int j = 0;j<data[i].length;j++){
-addressSum[i] += data[i][j];
+
+int ManSum = 0;
+int WomenSum = 0;
+int CurrentValueMan = 0;
+int CurrentValueWomen = 0;
+
+for(int i =0; i<data.length;i++)
+{
+	ManSum = ManSum + CurrentValueMan;
+	WomenSum = WomenSum + CurrentValueWomen;
+	
+	for(int j = 0; j<data[i].length;j++)
+	{
+	CurrentValueMan = data[i][0];
+	CurrentValueWomen = data[i][1];
+	System.out.printf(" %d ",data[i][j]);
+	}
+	System.out.println("\n");
 }
-addressAvg[i] = (float)addressSum[i]/(data[i].length);
-System.out.println(live[i]+"(Sum : "+addressSum[i] + ", Avg : " + addressAvg[i]+")");
+
+System.out.println("Man's average population is "+ManSum/25);
+System.out.println("Women's average population is "+WomenSum/25);
 }
-menAvg = (float)menSum/(data.length);
-womenAvg = (float)womenSum/(data.length);
-System.out.println();
-System.out.println("MenNumber : "+menSum+", MenAvg : "+menAvg);
-System.out.println("WomenNumber : "+womenSum+", WomenAvg : "+womenAvg+"\n");
-System.out.println("Graph --------------");
-for(int i=0;i<data.length;i++){
-    System.out.print("(");
-    for(int j =0;j<data[i].length;j++){
-       System.out.printf(" %d ",data[i][j]);
-    }
-    System.out.print(")\n");
-}
-}
- public static void main(String[] args){
- stringReverse();
- }
 }
