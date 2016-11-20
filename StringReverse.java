@@ -1,16 +1,17 @@
-public class p6_StringReverse{
-static void stringReverse(String s){
-String hello = "hello";
-hello.toCharArray();
-char[] chArr = hello.toCharArray();
-StringBuilder strB = new StringBuilder();
-for(int i = chArr.length-1; i>=0 ; i--){
-    strB.append(chArr[i]);
-}
-System.out.println(strB);
-}
- public static void main(String[] args){
- String str = "hello";
- stringReverse(str);
- }
+import java.util.*;
+class HelloReverse
+{
+	public static void main(String[] args)
+	{
+        Map<String,String> m = new HashMap<String,String>();
+		m.put("message","kgh");
+		char[] letter = "hello".toCharArray();
+		StringBuilder olleh = new StringBuilder();
+			for(int i = letter.length-1; i >= 0; i--)
+			{
+				olleh.append(letter[i]);
+				System.out.println(letter[i]);
+			}
+		System.out.println(olleh);
+	}
 }
